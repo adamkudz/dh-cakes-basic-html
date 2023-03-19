@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="stylesheet" href="styles/cakes.css" />
+		<!--import vue.js-->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<title>All Cakes</title>
+	</head>
+	<header>
+		<nav>
+			<div class="nav-logo-font-box">
+				<span class="logo-font"> Oh Snap! </span>
+				<p class="logo-sub-font">THAT'S TASTY</p>
+			</div>
+			<ul>
+				<li><a class="nav-link-text" href="index.html">Home</a></li>
+				<li><a class="nav-link-text" href="cakes.html">Cakes</a></li>
+				<li><a class="nav-link-text" href="about.html">About</a></li>
+				<li><a class="nav-link-text" href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<body>
+		<h1>All Cakes</h1>
+		<div id="app">
+			<div class="cake-card" v-for="cake in cakes">
+				<img :src="cake.image" />
+				<h2>{{ cake.name }}</h2>
+				<p>{{ cake.price }}</p>
+			</div>
+		</div>
+	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello Vue!',
+				cakes: [
+					{ name: 'Cookie Cake', price: 45, image: 'images/cookie_cake.png' },
+					{
+						name: 'Juneteenth Cake',
+						price: 45,
+						image: 'images/juneteenth_cake.png'
+					}
+				]
+			}
+		});
+	</script>
+</html>
